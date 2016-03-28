@@ -23,13 +23,13 @@ SDL_Renderer *gRenderer = NULL;
 TTF_Font *gFont = NULL;
 
 // 各种初始化
-void init()
+void MySDL2Init()
 {
     SDL_Assert(SDL_Init(SDL_INIT_VIDEO) == 0, "SDL could not initialize!");
     SDL_Assert(SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1"), "Linear texture filtering not enabled!");
 
-    //Create window
-    gWindow = SDL_CreateWindow("SDL Tutorial",
+    // Create window
+    gWindow = SDL_CreateWindow("SDL2 Toys",
                                SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
                                SCREEN_WIDTH, SCREEN_HEIGHT,
                                SDL_WINDOW_SHOWN);
@@ -39,10 +39,10 @@ void init()
     gRenderer = SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED);
     SDL_Assert(gRenderer != NULL, "Renderer could not be created!");
 
-    //Initialize renderer color
+    // Initialize renderer color
     SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
 
-    //Initialize image loading
+    // Initialize image loading
     int imgFlags = IMG_INIT_PNG | IMG_INIT_JPG;
     SDL_Assert(IMG_Init(imgFlags) & imgFlags, "SDL_image could not initialize!");
 

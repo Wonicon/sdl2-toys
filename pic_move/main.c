@@ -2,7 +2,7 @@
 
 int main(int argc, char *argv[])
 {
-    init();
+    MySDL2Init();
     load_texture("test.jpg");
     load_font("OpenSans-Regular.ttf");
 

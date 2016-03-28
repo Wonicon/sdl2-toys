@@ -24,7 +24,7 @@ extern SDL_Renderer *gRenderer;
 
 void SDL_Assert(int condition, const char *format, ...);
 
-void init();
+void MySDL2Init();
 
 void load_texture(const char *path);
 
